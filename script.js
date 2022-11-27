@@ -6,19 +6,45 @@ let gameboard = (function() {
         "x",
         "x",
         "o",
-        "x",
-        "o",
-        "o",
+        "",
+        "",
+        "",
    
     ];
     return gameboard;
 })()
 
-let renderGameBoar = (function() {
+let renderGameBoard = function() {
   for (let i = 0; i < gameboard.length; i++ ) {
+ 
    let squareContent =  document.querySelector(".square"+ i)
    squareContent.textContent = gameboard[i]
+
+   
+   
   }
+
+  
+}
+renderGameBoard()
+
+let addMarks = (function(){
+   for (let i = 0; i < gameboard.length; i++ ) {
+   
+      let squareContent =  document.querySelector(".square" + i);
+      console.log(squareContent);
+      squareContent.addEventListener("click", function() {
+         if (gameboard[i] == "") {
+            gameboard[i] = "x"
+         
+           
+         }
+         renderGameBoard()
+        
+       
+      })
+   }
+
 })()
 
    let playerFactory = function(name, number, assignedxo){
