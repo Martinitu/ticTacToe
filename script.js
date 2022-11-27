@@ -1,20 +1,25 @@
 let gameboard = (function() {
   let  gameboard = [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "x",
+        "o",
+        "x",
+        "x",
+        "x",
+        "o",
+        "x",
+        "o",
+        "o",
    
     ];
     return gameboard;
 })()
 
-console.log(gameboard)
+let renderGameBoar = (function() {
+  for (let i = 0; i < gameboard.length; i++ ) {
+   let squareContent =  document.querySelector(".square"+ i)
+   squareContent.textContent = gameboard[i]
+  }
+})()
 
    let playerFactory = function(name, number, assignedxo){
        let getPlayerName = () => {name; 
