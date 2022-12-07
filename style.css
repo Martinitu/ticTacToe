@@ -3,6 +3,7 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
  
 }
 
@@ -16,9 +17,11 @@ body {
 }
 
 .squares {
+    font-size: 150px;
+    text-align: center;
 margin: 5px;
 width: 200px;
 height: 200px;
-    background-color: blanchedalmond;
-    border: solid 1px black;
+background-color: blanchedalmond;
+border: solid 1px black;
 }
