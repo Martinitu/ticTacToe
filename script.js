@@ -1,3 +1,30 @@
+
+  let turns = document.querySelector(".turns")
+  let playerFactory = function(name, number, assignedxo){
+
+   let getPlayerName = () => {name; 
+return name; }
+
+   return {getPlayerName, name, number, assignedxo}
+};
+let startGame = document.querySelector("#startGame")
+startGame.addEventListener("click", intakeFormData);
+let playerOne 
+let playerTwo 
+function intakeFormData () {
+  
+   let playerOneName = document.getElementById("namePlayerOne").value;
+   let playerTwoName = document.getElementById("namePlayerTwo").value
+   event.preventDefault();
+   playerOne =  playerFactory( playerOneName, 1, "x");
+   playerTwo = playerFactory(playerTwoName, 2, "o");
+   turns.textContent = playerOne.getPlayerName() + " turn:";
+   console.log(playerOne)
+}
+
+ 
+    
+ 
 let gameboard = (function() {
   let  gameboard = [
         "",
@@ -19,17 +46,19 @@ let renderGameBoard = function() {
  
    let squareContent =  document.querySelector(".square"+ i)
    squareContent.textContent = gameboard[i]
-
+  
    
    
   }
 
   
 }
-renderGameBoard()
+
 
 let addMarks = (function(){
    let player = "o"
+    
+   
    for (let i = 0; i < gameboard.length; i++ ) {
       
       let squareContent =  document.querySelector(".square" + i);
@@ -39,13 +68,15 @@ let addMarks = (function(){
             if (player === "x") {
                 gameboard[i] = "o";
                 player = "o";
+                turns.textContent = playerOne.getPlayerName() + " turn:";
               } else if (player === "o") { 
                 gameboard[i] = "x";
                 player = "x";
+                turns.textContent = playerTwo.getPlayerName() + " turn:";
 
            }
           
-           console.log(gameboard)
+           
          }
          renderGameBoard()
          checkForWinner()
@@ -88,13 +119,11 @@ let checkForWinner = function(){
 
 }
 
-   let playerFactory = function(name, number, assignedxo){
-       let getPlayerName = () => {name; 
-    return name; }
-       return {getPlayerName, name, number, assignedxo}
-    };
+
+
+
+ 
+   
     
-   let playerOne =  playerFactory("Martin", 1, "x");
-  let playerTwo = playerFactory("Julice", 2, "o");
  
 

@@ -10,14 +10,18 @@
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <button class="startButton">start game</button>
+  
     <form action="">
-        <label for="namePalyerOne">Player One whats your Name?</label>
-        <input type="text" name="namePalyerOne">
-        <label for="namePalyerTwo">Player Two whats your Name?</label>
-        <input type="text" name="namePalyerTwo">
-        
+
+        <label for="namePlayerOne">Player One whats your Name?</label>
+        <input type="text" id="namePlayerOne">
+        <label for="namePlayerTwo">Player Two whats your Name?</label>
+        <input type="text" id="namePlayerTwo">
+        <button type="submit" id="startGame">start game</button>
+        <button type="submit" id="submit">restart Game</button>
     </form>
+    <h2 class="turns">Player One turn:</h2>
+    
     <div class="container">
         <div class="squares square0"></div>
         <div class="squares square1"></div>
